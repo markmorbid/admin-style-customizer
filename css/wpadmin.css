@@ -1,0 +1,229 @@
+/* WP Admin Styles */
+.wp-admin #wpbody-content td.plugin-update.colspanchange {
+    display: none;
+}
+
+.wp-admin #wpbody-content td.plugin-update.colspanchange:has(.notice) {
+    display: table-cell;
+    padding: 0 !important;
+}
+
+.wp-admin #wpbody-content td.plugin-update.colspanchange:has(.notice) .notice.update-message {
+    padding: 6px;
+    margin: 0;
+    font-size: 12px !important;
+    background: #ddebf8;
+    border: none !important;
+    border-bottom: 1px solid var(--login-border-light) !important;
+}
+
+.wp-admin #wpbody-content td.plugin-update.colspanchange:has(.notice) .notice.update-message p {
+    font-size: 11px;
+}
+
+.wp-admin #wpbody-content tr[data-slug*="download-"]:not([data-slug="download-monitor"], .inactive) td,
+.wp-admin #wpbody-content tr[data-slug*="download-"]:not([data-slug="download-monitor"], .inactive) th,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce"]:not([data-slug="woocommerce"]) td,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce"]:not([data-slug="woocommerce"]) th {
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+    font-size: 12px !important;
+    margin: 0;
+}
+
+.wp-admin #wpbody-content tr.inactive td,
+.wp-admin #wpbody-content tr.inactive th {
+    background: white !important;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+.wp-admin #wpbody-content tr.active td,
+.wp-admin #wpbody-content tr.active th {
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+.wp-admin #wpbody-content tr[data-slug*="download-"]:not([data-slug="download-monitor"], .inactive) td.plugin-title strong,
+.wp-admin #wpbody-content tr[data-slug*="download-"]:not([data-slug="download-monitor"], .inactive) td.plugin-title .row-actions,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce-"]:not([data-slug="woocommerce"], .inactive) td.plugin-title strong,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce-"]:not([data-slug="woocommerce"], .inactive) td.plugin-title .row-actions {
+    font-size: 12px !important;
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 8px;
+    line-height: 0.7em;
+}
+
+.wp-admin #wpbody-content .row-actions span.deactivate a {
+    max-height: 10px;
+    font-size: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1em;
+    border-radius: 0;
+    background: #bfdbf2;
+    color: #407bab;
+    border: 1px solid #78b3e3;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.wp-admin #wpbody-content .row-actions span.deactivate a,
+.wp-admin #wpbody-content a.update-link {
+    max-height: 10px;
+    font-size: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1em;
+    border-radius: 0;
+    background: #bfdbf2;
+    color: #407bab;
+    border: 1px solid #78b3e3;
+    margin-top: 3px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wp-admin #wpbody-content .plugin-update-tr a.update-link,
+.wp-admin #wpbody-content a.update-link {
+    margin-top: 0;
+    color: white;
+    background: #407bab;
+    border: none;
+    font-weight: 500;
+    font-size: 9px;
+}
+
+.wp-admin #wpbody-content td.column-title strong,
+.wp-admin #wpbody-content td.plugin-title strong {
+    display: block;
+    margin-bottom: -2px;
+    font-size: 12px;
+}
+
+.wp-admin #wpbody-content .column-auto-updates {
+    width: 11.2em;
+    font-size: 10px;
+}
+
+.plugins .updated:not(.plugin-update-tr) td,
+.plugins .updated:not(.plugin-update-tr) th {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+}
+
+.wp-admin #wpbody-content tr[data-slug*="download-"]:not([data-slug="download-monitor"], .inactive) .row-actions span.deactivate a,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce-"]:not([data-slug="woocommerce"], .inactive) .row-actions span.deactivate a {
+    background: #bfdbf2;
+    color: #407bab;
+    margin-top: -5px;
+}
+
+.wp-admin #wpbody-content .plugin-version-author-uri {
+    font-size: 11px;
+}
+
+.wp-admin #wpbody-content .plugins .desc p {
+    margin: 5px 0 3px;
+    font-size: 11px;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    opacity: 0.4;
+}
+
+.wp-admin #wpbody-content tr.active.update td,
+.wp-admin #wpbody-content tr.active.update th.check-column {
+    border-bottom: 1px solid var(--login-border-light) !important;
+}
+
+.wp-admin #wpbody-content tr.active.update th.check-column,
+.wp-admin #wpbody-content td.plugin-update.colspanchange:has(.notice) {
+    border-left-color: #ff5500 !important;
+}
+
+.wp-admin #wpbody-content td.plugin-update.colspanchange p.dokan-pro-plugin-upgrade-notice {
+    display: none !important;
+}
+
+.wp-admin #wpbody-content a.toggle-auto-update {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.wp-admin #wpbody-content a.toggle-auto-update .label,
+.wp-admin #wpbody-content td .auto-update-time {
+    flex: 1 1;
+    display: flex;
+    order: -1;
+    align-content: center;
+    flex-direction: column;
+    outline: none;
+    box-shadow: none;
+    line-height: 1.2em;
+    text-align: left;
+}
+
+.wp-admin #wpbody-content tr[data-slug*="woocommerce"]:not([data-slug="woocommerce"]).inactive td,
+.wp-admin #wpbody-content tr[data-slug*="woocommerce"]:not([data-slug="woocommerce"]).inactive th {
+    background: white !important;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    font-size: 11px !important;
+    filter: grayscale(1);
+}
+
+.wp-admin #wpbody-content tr.active td span.order,
+.wp-admin #wpbody-content tr.active td span a[target="_blank"],
+.wp-admin #wpbody-content tr.active td span.go_pro {
+    display: none !important;
+}
+
+.wp-admin #wpbody-content td.plugin-title .row-actions.visible {
+    font-size: 11px !important;
+}
+
+.wp-admin #wpbody-content td.plugin-update.colspanchange:has(.notice) .notice.update-message p::before {
+    font-size: 18px;
+    margin-right: 2px;
+    color: #ff5500;
+}
+
+.wp-admin #wpbody-content tr.active td.plugin-title.column-primary {
+    border-left: 1px solid #d8dde2 !important;
+}
+
+.wp-admin #wpbody-content tr.active th.check-column {
+    padding-right: 8px !important;
+}
+
+.plugins tr.active:has(p.cr_auto_update) {
+    display: none !important;
+}
+
+body.asset-cleanup-pro_page_wpassetcleanup_assets_manager #wpacu-update-button-area,
+body.asset-cleanup_page_wpassetcleanup_assets_manager #wpacu-update-button-area {
+    z-index: 9 !important;
+}
+
+#adminmenu div.separator {
+    height: 1px;
+    padding: 0;
+    background: #ffffff1e;
+    margin: 7px 0;
+}

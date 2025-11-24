@@ -1,0 +1,621 @@
+/* Login Page Styles */
+body.wp-core-ui.login {
+    background: var(--login-maincolor);
+}
+
+html body.wp-core-ui.login form {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 26px 24px 34px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid #222;
+    box-shadow: none;
+}
+
+.login label {
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.login #nav,
+p#backtoblog a,
+.login #nav a {
+    color: black !important;
+}
+
+.av-siteloader-wrap.av-transition-with-logo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: var(--login-darkblue-transp);
+    z-index: 99999999999;
+}
+
+.av-siteloader-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form .forgetmenot {
+    font-weight: 400;
+    float: left;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.login label:has(+ input, + .wp-pwd) {
+    font-size: 13px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-bottom: 2px;
+    background: var(--login-maincolor);
+    margin-top: 0;
+    font-weight: 600;
+    font-family: var(--login-titlefont);
+    letter-spacing: -0.005rem;
+    text-transform: uppercase;
+    max-width: fit-content;
+    padding: 5px 13px;
+    border: 2px solid;
+    color: var(--login-border-color) !important;
+}
+
+html body.wp-core-ui.login form p:not(.forgetmenot, .submit),
+html body.wp-core-ui.login form div {
+    flex: 1 1 100%;
+}
+
+html body.wp-core-ui.login form > p {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    flex: 1;
+    gap: 7px;
+}
+
+html body.wp-core-ui.login button.button.wp-hide-pw {
+    top: 0;
+    width: 46px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    background: var(--login-maincolor);
+    color: var(--login-border-color) !important;
+    min-height: 48px;
+}
+
+.login .button.wp-hide-pw:focus {
+    background: inherit;
+    border-color: inherit;
+    box-shadow: none;
+    outline: 0 solid transparent;
+}
+
+html body.wp-core-ui.login button.button.wp-hide-pw .dashicons {
+    top: 0;
+}
+
+html body.wp-core-ui.login form .forgetmenot {
+    font-weight: 400;
+    float: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: flex-start;
+    order: 2;
+    cursor: pointer;
+}
+
+body.wp-core-ui.login form *:focus.input {
+    border-color: var(--login-maincolor);
+    box-shadow: 0 0 0 1px var(--login-maincolor);
+    outline: 2px solid transparent;
+}
+
+.login .message,
+.login .notice,
+.login .success {
+    font-weight: 400;
+    overflow: hidden;
+    background-color: white;
+    backdrop-filter: none;
+    outline: 1px solid;
+    outline-offset: 1px;
+    border-radius: 0 var(--login-border-radius) var(--login-border-radius) 0;
+    padding: 15px;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 10px;
+    color: initial;
+    border-left-width: 6px;
+    font-family: var(--login-mainfont);
+    box-shadow: 7px 8px 0 0 color-mix(in srgb, var(--login-border-color), transparent 54%);
+    scale: 0.98;
+}
+
+/* Checkbox Styles */
+html body.wp-core-ui.login input[type=checkbox]::before {
+    content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E");
+    width: inherit;
+    height: inherit;
+    color: currentColor;
+    accent-color: var(--login-maincolor);
+    margin: -2px;
+    scale: 0;
+    filter: brightness(0);
+    transition: all 300ms;
+}
+
+html body.wp-core-ui.login input[type=checkbox]:checked::before {
+    scale: 1.1;
+}
+
+html body.wp-core-ui.login #login input[type=checkbox] {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--login-maincolor);
+    outline: none !important;
+    border: 2px solid var(--login-border-color) !important;
+    border-radius: var(--login-border-radius);
+    margin-right: 0;
+    display: grid;
+    place-content: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+@media screen and (max-width: 782px) {
+    html body.wp-core-ui.login {
+        .widefat tfoot td input[type=checkbox]:before,
+        .widefat th input[type=checkbox]:before,
+        .widefat thead td input[type=checkbox]:before,
+        input[type=checkbox]:before,
+        input[type=checkbox]:checked:before {
+            width: 1.5rem;
+            height: 1.75rem;
+            margin: -.1875rem -.3125rem;
+        }
+    }
+}
+
+body.wp-core-ui.login form .input,
+body.wp-core-ui.login input[type="text"] {
+    border-radius: var(--login-border-radius);
+    border: 2px solid var(--login-border-color) !important;
+    font-size: 15px;
+    margin: 0 0 7px 0;
+    min-height: 48px;
+    background: #fff;
+    padding: 7px 10px;
+}
+
+body.wp-core-ui.login input[type="password"] {
+    padding-right: 50px;
+}
+
+body.wp-core-ui.login p:has(input[type="checkbox"]) {
+    display: flex;
+    margin: 12px 0 0 0 !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body.wp-core-ui.login form p:has(input:not([type="checkbox"])),
+body.wp-core-ui.login form div:has(input:not([type="checkbox"])) {
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+}
+
+body.wp-core-ui.login p.forgetmenot:has(input[type="checkbox"]) {
+    display: flex;
+    margin: -5px 0 0 0 !important;
+    font-weight: 400;
+    float: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+html body.wp-core-ui.login .button-primary {
+    font-size: 18px;
+    background: var(--login-maincolor);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--login-border-color);
+    border-radius: var(--login-border-radius);
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-right: 0;
+    color: var(--login-border-color);
+    font-family: var(--login-titlefont), sans-serif;
+    box-shadow: inset 0 0 0 0 var(--login-maincolor), 5px 5px 0 0 color-mix(in srgb, var(--login-border-color), transparent 25%);
+    line-height: 1.5em;
+    padding: 10px !important;
+    transition: all 300ms;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login #backtoblog a,
+.login #nav a {
+    color: var(--login-border-color) !important;
+    text-align: center;
+    background: white;
+    font-size: 11px !important;
+    padding: 10px 11px;
+    border-radius: var(--login-border-radius);
+    border: 2px solid;
+    font-weight: 700 !important;
+    white-space: nowrap;
+    flex: 1;
+    box-shadow: inset 0 0 0 0 var(--login-maincolor), 5px 5px 0 0 #3c434a;
+    word-spacing: -1px;
+    text-transform: uppercase;
+    transition: all 300ms;
+}
+
+html body.wp-core-ui.login .button-primary:hover,
+.login #backtoblog a:hover,
+.login #nav a:hover {
+    color: var(--login-maincolor) !important;
+    box-shadow: inset 300px 0 0 0 color-mix(in srgb, var(--login-border-color), white 8%), 5px 5px 0 0 color-mix(in srgb, var(--login-border-color), transparent 45%);
+}
+
+.grecaptcha-badge {
+    display: none !important;
+}
+
+body.login #login {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: unset !important;
+    width: clamp(250px, 90vw, 370px) !important;
+    max-width: clamp(14rem, 85vw, 65rem);
+    gap: 5px;
+}
+
+html:has(body.wp-core-ui.login #login),
+body.wp-core-ui.login:has(#login) {
+    height: 100%;
+    padding: 0;
+}
+
+html body.wp-core-ui.login form#loginform,
+html body.wp-core-ui.login form {
+    margin: 0 0 10px 0;
+    padding: 30px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid var(--login-border-color);
+    box-shadow: 5px 5px 0 0 color-mix(in srgb, var(--login-border-color), transparent 35%);
+    flex: 1 1 100%;
+    padding-inline: clamp(1rem, 5vw, 2rem);
+    padding-block: clamp(1rem, 5vh, 2rem);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 6px;
+    font-family: var(--login-mainfont);
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+}
+
+html:has(body.wp-core-ui.login #login) label:has(+ input, + .wp-pwd) {
+    font-size: 13px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-bottom: 2px;
+    background: var(--login-maincolor);
+    margin-top: 0;
+    font-weight: 600;
+    font-family: var(--login-titlefont);
+    letter-spacing: -0.005rem;
+    text-transform: uppercase;
+    max-width: fit-content;
+    padding: 5px 13px;
+    border: 2px solid;
+    color: var(--login-border-color) !important;
+}
+
+html:has(body.wp-core-ui.login #login) label:not(:has(+ input:not([type="checkbox"]), + .wp-pwd)) {
+    font-size: 13px;
+    line-height: 1.5em;
+    display: inline-flex;
+    margin-bottom: 5px;
+    font-weight: 600 !important;
+    font-family: var(--login-titlefont);
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.login #nav,
+.login #backtoblog {
+    margin: 0 !important;
+    font-size: 0;
+    padding: 0 !important;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 0 solid !important;
+    flex: 1 1;
+    vertical-align: middle;
+}
+
+html body.wp-core-ui.login h1 a {
+    background-image: var(--login-logo, url("https://hashpower.academy/wp-admin/images/wordpress-logo.svg"));
+    width: 130px;
+    height: 130px;
+    background-size: contain;
+    pointer-events: none !important;
+    background-repeat: no-repeat;
+    color: #3c434a;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    text-indent: -9999px;
+    outline: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.login h1.wp-login-logo {
+    text-align: center;
+    flex: 1 1 100%;
+    margin-bottom: 15px;
+}
+
+#login form p.submit {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1 1 100%;
+    order: 2;
+}
+
+html body.wp-core-ui.login .itsec-recaptcha-opt-in {
+    background: #f5f5f5;
+    border: 1px solid color-mix(in srgb, var(--login-border-color), transparent 37%);
+    border-radius: var(--login-border-radius);
+    margin-bottom: 8px;
+    padding: 1rem;
+    box-shadow: 5px 5px 0 0 color-mix(in srgb, var(--login-border-color), transparent 25%);
+    font-size: 12px;
+}
+
+/* Activation Page Styles */
+div#activate-page {
+    background: #fafafa;
+    border: 1px solid var(--login-border-light);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    min-height: auto;
+    flex: 0 1 200px;
+    gap: 5%;
+}
+
+form#activation-form label {
+    font-size: 1em;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+.registration #main > .container_wrap > .container main {
+    min-height: 260px;
+    max-height: 100%;
+}
+
+.register h2.bp-heading {
+    font-size: 1.5rem;
+}
+
+div#activate-page p a {
+    display: flex;
+    flex: 1 1;
+    width: 134px;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: var(--login-maincolor);
+    color: black;
+    border: 2px solid;
+    padding: 15px;
+}
+
+#activate-page p {
+    flex: 1 1 50%;
+    display: flex;
+}
+
+#activate-page:has(#activation-form) p {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--login-darkgray);
+    flex: 0 0 300px;
+}
+
+#activate-page:has(#activation-form) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-around;
+    border: 3px solid;
+    padding: 40px;
+    min-height: 260px;
+    box-shadow: 4px 4px 0 0;
+}
+
+div#activate-page form#activation-form {
+    display: flex;
+    flex: 1 0;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+div#activate-page p.submit {
+    flex: 1 0;
+    margin: 0;
+    padding: 0;
+}
+
+div#activate-page p.submit input[type="submit"] {
+    background: var(--login-maincolor);
+    color: black;
+    border: 2px solid;
+    padding: 15px;
+}
+
+div#buddypress:has(#activate-page) {
+    min-height: calc(100vh - 400px - 100px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+div#buddypress:has(#activate-page) div#activate-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    min-height: 260px;
+}
+
+.buddypress-wrap .register-page form:has(.layout-wrap:empty),
+.buddypress-wrap .register-page form:not(:has(.layout-wrap > *)) {
+    display: none !important;
+}
+
+.activation .container_wrap.container_wrap_first.main_color.fullsize {
+    background: var(--login-maincolor);
+}
+
+#activate-page:has(#activation-form) > p {
+    font-size: 2.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--login-darkgray);
+    flex: 1 1;
+    font-family: var(--login-titlefont);
+    letter-spacing: 0;
+    line-height: 2.5rem;
+}
+
+#top.activation .stretch_full.container_wrap.title_container {
+    display: none !important;
+}
+
+#activate-page:has(#activation-form) input[type="text"],
+#activate-page:has(#activation-form) input[type="password"] {
+    border-color: var(--login-blue);
+    background-color: #fbfbfb;
+    color: var(--login-blue);
+    border-width: 2px;
+    border-style: solid;
+    min-height: 50px;
+    border-radius: 0;
+}
+
+#top.activation .container_wrap.container_wrap_first.main_color.fullsize {
+    background: var(--login-maincolor);
+}
+
+#top.activation div#buddypress:has(#activate-page) div#activate-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    min-height: unset;
+    border: 3px solid var(--login-blue);
+    box-shadow: 4px 4px 0 0;
+}
+
+#top.activation div#buddypress:has(#activate-page) div#activate-page > p {
+    font-size: 1.3em;
+    color: var(--login-darkgray);
+    flex: 1 1;
+    font-family: var(--login-titlefont);
+}
+
+a.wp-login-register {
+    display: none;
+}
+
+.login #nav {
+    margin: 24px 0 0;
+    font-size: 0;
+}

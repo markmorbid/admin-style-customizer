@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In ‹ WordPress Demo Site</title>
+    <meta name="robots" content="noindex, noarchive">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --asc-login-logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath fill='%232efc86' d='M66.5 23.5c-1.4 0-2.5 1.1-2.5 2.5v21.6l-21.6-21.6c-.5-.5-1.2-.8-2-.8-1.4 0-2.5 1.1-2.5 2.5v45.8c0 1.4 1.1 2.5 2.5 2.5 1.4 0 2.5-1.1 2.5-2.5V50.8l21.6 21.6c.5.5 1.2.8 2 .8 1.4 0 2.5-1.1 2.5-2.5V26c0-1.4-1.1-2.5-2.5-2.5z'/%3E%3C/svg%3E");
+            --asc-login-blue: #282649;
+            --asc-login-darkgray: #333333;
+            --asc-login-border-light: #dedede;
+            --asc-login-darkbg: #070606;
+            --asc-login-maincolor: #2efc86;
+            --asc-login-border-color: #2a2a2d;
+            --asc-login-border-radius: 8px;
+            --asc-login-titlefont: "Space Grotesk", helvetica, arial, sans-serif;
+            --asc-login-mainfont: "Space Grotesk", helvetica, arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--asc-login-mainfont);
+            background: var(--asc-login-maincolor);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .asc-login {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .asc-login h1.asc-wp-login-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .asc-login h1.asc-wp-login-logo a {
+            background-image: var(--asc-login-logo);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 120px;
+            height: 120px;
+            display: inline-block;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+
+        .asc-login #asc-loginform {
+            background: #fff;
+            border: 2px solid var(--asc-login-border-color);
+            border-radius: var(--asc-login-border-radius);
+            padding: 26px 24px 34px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .asc-login .asc-form-group {
+            margin-bottom: 20px;
+        }
+
+        .asc-login .asc-label {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 3px;
+            color: var(--asc-login-darkgray);
+            font-weight: 500;
+        }
+
+        .asc-login .asc-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 1px solid var(--asc-login-border-light);
+            border-radius: 4px;
+            background: #fff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            font-family: inherit;
+        }
+
+        .asc-login .asc-input:focus {
+            outline: none;
+            border-color: var(--asc-login-maincolor);
+            box-shadow: 0 0 0 2px rgba(46, 252, 134, 0.2);
+        }
+
+        .asc-login .asc-forgetmenot {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .asc-login .asc-forgetmenot input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: var(--asc-login-maincolor);
+        }
+
+        .asc-login .asc-forgetmenot label {
+            font-size: 14px;
+            color: var(--asc-login-darkgray);
+            cursor: pointer;
+        }
+
+        .asc-login .asc-submit {
+            margin-top: 20px;
+        }
+
+        .asc-login .asc-button-primary {
+            background: var(--asc-login-maincolor);
+            border: none;
+            color: var(--asc-login-darkbg);
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            font-family: inherit;
+        }
+
+        .asc-login .asc-button-primary:hover {
+            background: #25d875;
+            transform: translateY(-1px);
+        }
+
+        .asc-login .asc-button-primary:active {
+            transform: translateY(0);
+        }
+
+        .asc-login #asc-nav,
+        .asc-login #asc-backtoblog {
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 24px;
+        }
+
+        .asc-login #asc-nav a,
+        .asc-login #asc-backtoblog a {
+            color: var(--asc-login-darkbg);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .asc-login #asc-nav a:hover,
+        .asc-login #asc-backtoblog a:hover {
+            color: var(--asc-login-blue);
+            text-decoration: underline;
+        }
+
+        .asc-login #asc-backtoblog {
+            margin-top: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .asc-login #asc-loginform {
+                padding: 20px 16px 26px;
+            }
+            
+            .asc-login .asc-input {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Accessibility */
+        .asc-login .asc-input:focus-visible {
+            outline: 2px solid var(--asc-login-maincolor);
+            outline-offset: 2px;
+        }
+
+        .asc-login .asc-button-primary:focus-visible {
+            outline: 2px solid var(--asc-login-darkbg);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body class="asc-wp-core-ui asc-login">
+    <div class="asc-login">
+        <h1 class="asc-wp-login-logo">
+            <a href="#" title="WordPress Demo Site" tabindex="-1">
+                WordPress Demo Site
+            </a>
+        </h1>
+
+        <form name="asc-loginform" id="asc-loginform" action="#" method="post">
+            <div class="asc-form-group">
+                <label for="asc-user-login" class="asc-label">
+                    Username or Email Address
+                </label>
+                <input type="text" name="log" id="asc-user-login" class="asc-input" value="" size="20" autocapitalize="off">
+            </div>
+
+            <div class="asc-form-group">
+                <label for="asc-user-pass" class="asc-label">
+                    Password
+                </label>
+                <input type="password" name="pwd" id="asc-user-pass" class="asc-input" value="" size="20" autocomplete="current-password">
+            </div>
+
+            <div class="asc-forgetmenot">
+                <input name="rememberme" type="checkbox" id="asc-rememberme" value="forever">
+                <label for="asc-rememberme">Remember Me</label>
+            </div>
+
+            <p class="asc-submit">
+                <button type="submit" name="wp-submit" id="asc-wp-submit" class="asc-button-primary">
+                    Log In
+                </button>
+            </p>
+        </form>
+
+        <p id="asc-nav">
+            <a href="#">Lost your password?</a>
+        </p>
+
+        <p id="asc-backtoblog">
+            <a href="#">← Back to WordPress Demo Site</a>
+        </p>
+    </div>
+
+    <script>
+        // Basic form validation and interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('asc-loginform');
+            const usernameInput = document.getElementById('asc-user-login');
+            const passwordInput = document.getElementById('asc-user-pass');
+            const submitButton = document.getElementById('asc-wp-submit');
+
+            // Focus on username field on load
+            usernameInput.focus();
+
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                if (!usernameInput.value.trim()) {
+                    usernameInput.focus();
+                    usernameInput.style.borderColor = '#dc3545';
+                    return;
+                }
+                
+                if (!passwordInput.value.trim()) {
+                    passwordInput.focus();
+                    passwordInput.style.borderColor = '#dc3545';
+                    return;
+                }
+
+                // Simulate login process
+                submitButton.textContent = 'Logging in...';
+                submitButton.disabled = true;
+
+                setTimeout(function() {
+                    alert('This is a demo login form. No actual login will occur.');
+                    submitButton.textContent = 'Log In';
+                    submitButton.disabled = false;
+                }, 1500);
+            });
+
+            // Clear error styling on input
+            [usernameInput, passwordInput].forEach(input => {
+                input.addEventListener('input', function() {
+                    this.style.borderColor = '';
+                });
+            });
+
+            // Remember me functionality
+            const rememberCheckbox = document.getElementById('asc-rememberme');
+            rememberCheckbox.addEventListener('change', function() {
+                console.log('Remember me:', this.checked);
+            });
+        });
+    </script>
+</body>
+</html>
