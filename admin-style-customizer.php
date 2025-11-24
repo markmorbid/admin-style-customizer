@@ -211,6 +211,7 @@ class ASC_Plugin {
             --login-border-color-2: rgba(255,255,255,0.1);
             --login-darkbg: #080808;
             --login-darkbg-transp: rgba(11, 11, 13, 0.9);
+			
         }</style>";
         if(file_exists(ASC_PATH . 'css/adminbar.css')) echo '<style>' . file_get_contents(ASC_PATH . 'css/adminbar.css') . '</style>';
     }
@@ -302,6 +303,40 @@ class ASC_Plugin {
         return "
         /* HASHPOWER FLAT LAYOUT */
         /* Background */
+		body.login, body.asc-login {
+            background-color: var(--asc-bg-color);
+            background-image: var(--asc-bg-image);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: var(--asc-font);
+            height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; position: relative;
+			
+        }
+		html:has(body.wp-core-ui.login #login), body.wp-core-ui.login:has(#login),
+		html:has(body.asc-wp-core-ui.asc-login #asc-login), body.asc-wp-core-ui.asc-login:has(#asc-login)
+		{
+			height: 100%;
+			padding: 0;
+		}
+        body.login::before, body.asc-login::before {
+            content: ''; position: absolute; inset: 0; background: var(--asc-overlay); z-index: -1;
+        }
+		body.login #login, body.asc-login #asc-login {
+			padding: 0;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			min-width: unset !important;
+			width: clamp(250px, 90vw, 370px) !important;
+			max-width: clamp(14rem, 85vw, 65rem);
+			gap: 5px;
+		}
         body.login, body.asc-login {
             font-family: var(--asc-font);
             background: var(--asc-bg-color);
@@ -315,9 +350,22 @@ class ASC_Plugin {
             width: var(--asc-logo-w) !important; height: 150px !important;
             background-size: contain !important;
             background-position: center !important;
+			
             margin: 0 auto !important;
             display: block; pointer-events: none;
         }
+		.login h1 a, .asc-login h1.asc-wp-login-logo a {
+			background-image: var(--asc-logo) !important;
+			background-size: contain !important;
+			width: var(--asc-logo-w) !important;
+			height: 150px !important;
+			margin: 0 auto 15px !important;
+			display: block;
+			pointer-events: none;
+			text-indent: -9999px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 
         /* Form */
         .login form, .asc-login #asc-loginform {
@@ -385,6 +433,7 @@ class ASC_Plugin {
         return "
         /* DEGENT GLASS LAYOUT */
         /* Background */
+		
         body.login, body.asc-login {
             background-color: var(--asc-bg-color);
             background-image: var(--asc-bg-image);
@@ -394,18 +443,51 @@ class ASC_Plugin {
             font-family: var(--asc-font);
             height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; position: relative;
         }
+		html:has(body.wp-core-ui.login #login), body.wp-core-ui.login:has(#login),
+		html:has(body.asc-wp-core-ui.asc-login #asc-login), body.asc-wp-core-ui.asc-login:has(#asc-login)
+		{
+			height: 100%;
+			padding: 0;
+		}
         body.login::before, body.asc-login::before {
             content: ''; position: absolute; inset: 0; background: var(--asc-overlay); z-index: -1;
         }
-
+		body.login #login, body.asc-login #asc-login {
+			padding: 0;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			min-width: unset !important;
+			width: clamp(250px, 90vw, 370px) !important;
+			max-width: clamp(14rem, 85vw, 65rem);
+			gap: 5px;
+		}
         /* Logo */
         .login h1 a, .asc-login h1.asc-wp-login-logo a {
             background-image: var(--asc-logo) !important;
             background-size: contain !important;
+			background-repeat: no-repeat;
             width: var(--asc-logo-w) !important; height: 150px !important;
             margin: 0 auto 15px !important;
             display: block; pointer-events: none;
         }
+		.login h1 a, .asc-login h1.asc-wp-login-logo a {
+			background-image: var(--asc-logo) !important;
+			background-size: contain !important;
+			width: var(--asc-logo-w) !important;
+			height: 150px !important;
+			margin: 0 auto 15px !important;
+			display: block;
+			pointer-events: none;
+			text-indent: -9999px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 
         /* Form */
         .login form, .asc-login #asc-loginform {
@@ -414,7 +496,16 @@ class ASC_Plugin {
             -webkit-backdrop-filter: blur(10px);
             border: var(--asc-border-w) solid var(--asc-border-c);
             border-radius: var(--asc-radius);
-            padding: 30px; margin: 0;
+            flex: 1 1 100%;
+			padding-inline: clamp(1rem, 5vw, 2rem);
+			padding-block: clamp(1rem, 5vh, 2rem);
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: stretch;
+			gap: 6px;
+			position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
